@@ -24,7 +24,8 @@ first_name = player[ :(player.find(' '))]
 last_name_len = len(player[ (player.find(' ')):-1])
 #print(last_name_len)
 
-name_short = (f'{first_name[ :1]}. { player[ 4 : ] }')
+name_short = str(first_name[ :1])+ '.'+ str(player[(player.find(' ')):])
+#name_short = (f'{first_name[ :1]}. { player[ 4 : ] }')
 #print(name_short)
 
 chant = ((first_name) + '! ') * (len(first_name)-1) + ((first_name) + '!')
