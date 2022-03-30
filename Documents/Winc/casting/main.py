@@ -19,4 +19,6 @@ order = 'broccoli 1.6'
 order_amount = (float(order[order.find(' ') : ]))
 number = (order_amount * broccoli_per_kilo)
 order_total = round(number, 2) 
-print(str(order_amount) +'kg broccoli costs ' + str(order_total) + 'e' )
+#print(str(order_amount) +'kg broccoli costs ' + str(order_total) + 'e' )
+print(f'{order_amount} kg broccoli costs {order_total}e')
+
