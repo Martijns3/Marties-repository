@@ -9,9 +9,9 @@ scorer_name1 = 'Marco van Basten'
 goal_1 = 54
 
 
-scorers = (f'{scorer_name0} {goal_0}, {scorer_name1} {goal_1}')
+scorers = str(scorer_name0) + ' ' + str(goal_0) + ', ' + str(scorer_name1) +' '+ str(goal_1)
 print(scorers)
-report = (f'{scorer_name0} scored in the {goal_0}nd minute\n{scorer_name1} scored in the {goal_1}th minute')
+report = f'{scorer_name0} scored in the {goal_0}nd minute\n{scorer_name1} scored in the {goal_1}th minute'
 print(report)
 
 player = 'Jan Wouters'
@@ -30,5 +30,6 @@ name_short = (f'{first_name[ :1]}. { player[ 4 : ] }')
 chant = ((first_name) + '! ') * (len(first_name)-1) + ((first_name) + '!')
 #print(chant)
 
-good_chant = ((ord(chant[-1]) != ord(' '))) == True
+#good_chant = ((ord(chant[-1]) != ord(' '))) == True
+good_chant = chant[-1] != ' '
 #print(good_chant)
