@@ -6,6 +6,7 @@ __human_name__ = "arguments"
 # if'<name>'in msg:
 # print(msg.index('<'), (msg.index('<')+5))
 
+
 def greet(name, welcome="Hello, <name>!"):
     greeting = welcome.replace("<name>", name)
     return greeting
@@ -31,8 +32,8 @@ gravity = {
 
 
 def force(mass, body="earth"):
-    f = round(float(mass) * gravity[body], 2)
-    return f
+    Fg = round(float(mass) * gravity[body], 2)
+    return Fg
 
 
 force(100, "sun")
