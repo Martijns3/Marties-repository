@@ -3,16 +3,12 @@ __winc_id__ = "7b9401ad7f544be2a23321292dd61cb6"
 __human_name__ = "arguments"
 
 # Add your code after this line
-# if'<name>'in msg:
-# print(msg.index('<'), (msg.index('<')+5))
 
 
 def greet(name, welcome="Hello, <name>!"):
     greeting = welcome.replace("<name>", name)
     return greeting
 
-
-greet("Tijmen", "Hoe gaat het, <name>?")
 
 # _________________________________________________________________________________________
 
@@ -36,16 +32,18 @@ def force(mass, body="earth"):
     return Fg
 
 
-force(100, "sun")
-
 # _________________________________________________________________________________________
 
 
 def pull(m1, m2, d):
-
-    Fp = (6.674 * (10**-11)) * (float(m1) * float(m2)) / (float(d) ** 2)
-    # Fp = ((float(m1) * float(m2)))/(float(d)**2)
+    Fp = 6.674 * (10**-11) * float(m1) * float(m2) / (float(d) ** 2)
     return Fp
 
+
+# _________________________________________________________________________________________
+
+greet("Tijmen", "Hoe gaat het, <name>?")
+
+force(100, "sun")
 
 pull(800, 1500, 3)
