@@ -29,6 +29,7 @@ gravity = {
 
 def force(mass, body="earth"):
     Fg = round(float(mass) * gravity[body], 2)
+    # return Fg
     return Fg
 
 
@@ -36,14 +37,14 @@ def force(mass, body="earth"):
 
 
 def pull(m1, m2, d):
-    Fp = 6.674 * (10**-11) * float(m1) * float(m2) / (float(d) ** 2)
+    Fp = (6.674 * (10**-11)) * (float(m1) * float(m2) / (float(d) ** 2))
     return Fp
 
 
 # _________________________________________________________________________________________
 
-greet("Tijmen", "Hoe gaat het, <name>?")
+greet("12345", "Hoe gaat het, <name>?")
 
-force(100, "sun")
+force(11.23, "earth")
 
 pull(800, 1500, 3)
