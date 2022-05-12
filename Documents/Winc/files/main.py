@@ -9,7 +9,7 @@ import shutil
 
 def clean_cache():
 
-    dir_path = "/Users/Martijn/Documents/Winc/files/cache"
+    dir_path = os.path.join(os.getcwd(), "files/cache")
     if os.path.exists(dir_path):
         shutil.rmtree(dir_path)
     os.mkdir(dir_path)
@@ -24,17 +24,17 @@ def cache_zip(zip_file_path: str, cache_dir_path: str):
     with ZipFile(zip_file_path) as zipObj:
         zipObj.extractall(cache_dir_path)
 
-    os.listdir(os.path.join(os.getcwd(), "cache"))
+    os.listdir(os.path.join(os.getcwd(), "files/cache"))
 
 
 # ----------------------------------------------------------------------------------------------------------------------------
 
 
 def cached_files():
-    dir_contents = os.listdir("/Users/Martijn/Documents/Winc/files/cache/")
+    dir_contents = os.listdir(os.path.join(os.getcwd(), "files/cache"))
     file_list = []
     for entry in dir_contents:
-        fullPath = os.path.join("/Users/Martijn/Documents/Winc/files/cache/", entry)
+        fullPath = os.path.join(os.getcwd(), "files/cache", entry)
         if os.path.isdir(fullPath):
             pass
         else:
@@ -45,10 +45,9 @@ def cached_files():
 
 # ----------------------------------------------------------------------------------------------------------------------------
 
-file_list = cached_files()
-
 
 def find_password(file_list):
+
     for x in file_list:
         openfile = open(x, "r")
         line = openfile.readline()
@@ -65,31 +64,12 @@ def find_password(file_list):
 def main():
     clean_cache()
     cache_zip(
-        "/Users/Martijn/Documents/Winc/files/data.zip",
-        "/Users/Martijn/Documents/Winc/files/cache",
+        (os.path.join(os.getcwd(), "files/data.zip")),
+        (os.path.join(os.getcwd(), "files/cache")),
     )
     cached_files()
-    find_password(file_list)
+    find_password(cached_files())
 
-
-# ----------------------------------------------------------------------------------------------------------------------------
-
-# ik heb even een vraag bij de laatste functie: find_password.
-# Ik heb een functie call gemaakt die er als volgt uitzag: find_password(*cached_files())
-# Mijn funcie zag er dan als volgt uit;
-
-# def find_password(*args):
-#     for x in args:
-#         openfile = open(x,'r')
-#         line = openfile.readline()
-#         while line != '':
-#             line = openfile.readline()
-#             if "password" in line:
-#                 passkey = (line.replace("password: ", "").rstrip('\n'))
-#                 return passkey
-
-# Het password werd gegenereerd en ik kreeg geen errors. Alleen WINCPY accepteerde deze oplossing niet vanwege een TypeError.
-# Maar zou dit niet een mooiere oplossing zijn, angezien ik de functie output van cached_files direct als argument kan gebruiken?
 
 # ----------------------------------------------------------------------------------------------------------------------------
 
