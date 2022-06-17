@@ -90,13 +90,9 @@ Specialist_list = [
 Specialist_list.append(Plumber("Ira Plumbersson", 8))
 
 # ---> add a homeowner with this line:
-Alfred = Homeowner(
-    "Alfred Alfredson", "Alfredslane 123", ["painter", "plumber", "electrician"]
-)
+Alfred = Homeowner("Alfred Alfredson", "Alfredslane 123", ["painter", "plumber", "electrician"])
 Bert = Homeowner("Bert Bertson", "Bertslane 231", ["plumber"])
-Candice = Homeowner(
-    "Candice Candicedottir", "Candicelane 312", ["electrician", "painter", "plumber"]
-)
+Candice = Homeowner("Candice Candicedottir", "Candicelane 312", ["electrician", "painter", "plumber"])
 
 
 if __name__ == "__main__":
