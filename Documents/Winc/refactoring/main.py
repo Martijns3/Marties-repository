@@ -83,8 +83,8 @@ Specialist_list = [
     (Plumber("Bruce Willis", 16)),
     (Electrician("Eve Adams", 17.65)),
     (Plumber("Maddy Madison", 15)),
-    # (Painter("Babe Babylon", 20)),
-    # (Painter("Bob Bobsville", 17.50))
+    (Painter("Babe Babylon", 20)),
+    (Painter("Bob Bobsville", 17.50))
 ]
 # ---> add a specialist with this line:
 Specialist_list.append(Plumber("Ira Plumbersson", 8))
