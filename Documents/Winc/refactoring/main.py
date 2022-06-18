@@ -52,11 +52,9 @@ class Homeowner:
             else:
                 none_available = f'- Unfortunately at this moment we have no {zz.split(".")[1]} available'
                 final_list.append(none_available)
+                
         if len(cheapest_specialist):
-
-            final_list.append(
-                f"The specialist(s) will visit you at your address: {self.address}."
-            )
+            final_list.append(f"The specialist(s) will visit you at your address: {self.address}.")
         else:
             pass
         data = "\n".join((item[0:] for item in final_list))
