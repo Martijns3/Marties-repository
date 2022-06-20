@@ -1,6 +1,6 @@
-
 def get_none():
     return None
+
 
 # def flatten_dict(dict):
 #     list = [*dict.values()]
@@ -8,24 +8,31 @@ def get_none():
 
 # print(flatten_dict(d))
 
+final_list = []
 
-def flatten_dict(in_dict, dict_out=None, parent_key=None):
-    if dict_out is None:
-        dict_out = {}
 
-    for k, v in in_dict.items():
-        k = f"{parent_key}{k}" if parent_key else k
-        if isinstance(v, dict):
-            flatten_dict(in_dict=v, dict_out=dict_out, parent_key=k)
-            continue
-        
-        dict_out[k] = v
-        list = [*dict_out.values()]
-    return list
+def flatten_dict(d):
 
-dictA = {'a': {'inner_a': {"inner_inner_f": 34}, 'inner_b': 350}, 'b': 3.14}
-# d = {'a': {'inner_a': 42, 'inner_b': 350}, 'b': 3.14}
-# di = {'a': {'inner_a': 42, 'inner_b': 350}, 'b': 3.14}
-# ei = {'a': [{'inner_inner_a': 42}]}
+    for k, v in d.items():
 
-print(flatten_dict(dictA))
+        if type(v) == dict:
+            flatten_dict(v)
+
+        elif type(v) == list:
+            for i in v:
+                flatten_dict(i)
+        else:
+            final_list.append(v)
+
+    return final_list
+
+    # 1. Als het een dictionary is, ga dan door elke key heen en roep voor elke value flatten_dict weer aan. Voeg de waarde die je terugkrijgt aan final_list toe
+    # 2. Als het een list is, ga door elk element van de lijst heen en roep voor elk element flatten_dict weer aan. Voeg de waarde die je terugkrijgt aan final_list toe
+    # 3. Geen van beiden (else) dan zit je helemaal onderin je dictionary dus die voeg je dan sowieso to aan final_list (final_list += [in_dict])
+
+
+dictA = {"a": {"inner_a": {"inner_inner_f": 34}, "inner_b": 350}, "b": 3.14}
+dictB = {"a": {"inner_a": 42, "inner_b": 350}, "b": {3.14: "bleh"}}
+dictC = {"a": [{"inner_inner_a": 42}]}
+
+print(flatten_dict(dictB))
