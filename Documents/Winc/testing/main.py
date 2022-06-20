@@ -35,4 +35,4 @@ dictA = {"a": {"inner_a": {"inner_inner_f": 34}, "inner_b": 350}, "b": 3.14}
 dictB = {"a": {"inner_a": 42, "inner_b": 350}, "b": {3.14: "bleh"}}
 dictC = {"a": [{"inner_inner_a": 42}]}
 
-print(flatten_dict(dictB))
+print(flatten_dict(dictC))

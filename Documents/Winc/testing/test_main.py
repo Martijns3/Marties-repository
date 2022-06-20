@@ -10,7 +10,7 @@ def test_flatten_dict():
     assert (
         type(
             flatten_dict(
-                {"a": {"inner_a": {"inner_inner_f": 34}, "inner_b": 350}, "b": 3.14}
+                {"a": [{"inner_inner_a": 42}]}
             )
         )
         == list
