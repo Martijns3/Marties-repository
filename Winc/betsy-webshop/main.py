@@ -5,7 +5,7 @@ from models import *
 from thefuzz import fuzz
 
 def main():
-    # print(search("sweeter"))
+    print(search("sweeter"))
     
     # print(list_user_products(2))
     
@@ -15,7 +15,7 @@ def main():
     #                 "purple sweater for men and women en werewolves", 19.245, 2, 
     #                 ("men","blue","women","summer","sweater","aLiEn")))
     
-    update_stock(6,3)
+    # update_stock(6,3)
     
     # purchase_product(1,6,2)
     
