@@ -9,13 +9,13 @@ def main():
     
     # print(list_user_products(2))
     
-    print(list_products_per_tag(1))
+    # print(list_products_per_tag(1))
     
     # add_product_to_catalog(2,("Purple sweater XXL", 
     #                 "purple sweater for men and women en werewolves", 19.245, 2, 
     #                 ("men","blue","women","summer","sweater","aLiEn")))
     
-    # update_stock(6,3)
+    update_stock(6,3)
     
     # purchase_product(1,6,2)
     
