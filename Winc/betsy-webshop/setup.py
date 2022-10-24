@@ -120,7 +120,7 @@ def populate_test_database():
         
     db.close()
     
-populate_test_database()
+# populate_test_database()
 
 #__TEST FUNCTIONS________________________________________________________________
 
@@ -128,7 +128,7 @@ def product_list():
     prod = Product.select()
     for p in prod:
         print(p.id, p.product_name, p.product_description, p.product_owner.user_name, p.product_quantity)
-# product_list()
+product_list()
 
 def transactions_list():
     tr = Transactions.select()
@@ -146,7 +146,7 @@ def tags_per_product():
     for pr in Product.select():
         for x in pr.tags:
             print( x.tag_name, pr.product_name)
-tags_per_product()
+# tags_per_product()
 
 def user_info_list():
     user = User.select()

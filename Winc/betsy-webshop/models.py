@@ -1,8 +1,8 @@
 # Models go here
-
+import os
 from peewee import *
 
-db = SqliteDatabase("betsy-webshop.db")
+db = SqliteDatabase(os.path.join(os.getcwd(), "betsy-webshop.db"))
 
 class BaseModel(Model):
     class Meta:
