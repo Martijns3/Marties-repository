@@ -120,7 +120,7 @@ def populate_test_database():
         
     db.close()
     
-# populate_test_database()
+populate_test_database()
 
 #__TEST FUNCTIONS________________________________________________________________
 
