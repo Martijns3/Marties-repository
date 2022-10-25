@@ -1,0 +1,39 @@
+body {
+    margin: 0 auto;
+    max-width: 720px;
+    font-size: 18px;
+}
+body2 {
+    margin: 0 auto;
+    max-width: 720px;
+    font-size: 18px;
+    color: red;
+}
+h1 {
+    text-align: center;
+}
+
+.largeText {
+    font-size: 24px;
+}
+
+.boldText {
+    font-weight: bold;
+}
+
+.error {
+    color: white;
+    background-color: red;
+}
+
+.alice {
+    color: white;
+    background-color: pink;
+
+}
+
+.bob {
+    color: rgb(106, 103, 103);
+    background-color: powderblue;
+
+}
