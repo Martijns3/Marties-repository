@@ -128,7 +128,7 @@ def product_list():
     prod = Product.select()
     for p in prod:
         print(p.id, p.product_name, p.product_description, p.product_owner.user_name, p.product_quantity)
-product_list()
+# product_list()
 
 def transactions_list():
     tr = Transactions.select()
@@ -157,7 +157,7 @@ def user_info_list():
 def show_billinginfo():
     for b in Billinginfo:
         print(b.user_id, b.card_type, b.card_number, b.exp_date, b.cvc)
-# show_billinginfo()
+show_billinginfo()
 
 def show_manytomany():
     for tg in Product_tag:

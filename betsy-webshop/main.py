@@ -5,11 +5,11 @@ from models import *
 from thefuzz import fuzz
 
 def main():
-    print(search("sweeter"))
+    # print(search("sweetewr"))
     
     # print(list_user_products(2))
     
-    # print(list_products_per_tag(1))
+    # print(list_products_per_tag(14))
     
     # add_product_to_catalog(2,("Purple sweater XXL", 
     #                 "purple sweater for men and women en werewolves", 19.245, 2, 
@@ -21,8 +21,8 @@ def main():
     
     # remove_product(7)
     
-    # add_user(("Stefan Helleblad", "SverigesGatan 123","12457", "Stockholm", "Sweden"),
-    # ("VISA",4563543028501625,"09/24",987))
+    add_user(("Stefan Helleblad", "SverigesGatan 123","12457", "Stockholm", "Sweden"),
+    ("VISA",4563543028501625,"09/2024",987))
     
     # remove_user(7)
     
@@ -54,17 +54,15 @@ def search(term):
 
 def list_user_products(user_id):
     List =[]
-    for pr in Product.select():
-        if pr.product_owner.id == user_id:
-            List.append(pr)
+    for pr in Product.select().where(Product.product_owner == user_id):
+        List.append(pr)
     return List
 
 
 def list_products_per_tag(tag_id):
     List = [] 
-    for t in Product_tag.select():
-        if (t.tags_id) == tag_id:
-            List.append(t.product)
+    for t in Product_tag.select().where(Product_tag.tags_id == tag_id):
+            List.append(t.product)        
     return(List)
 
 
