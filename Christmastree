@@ -1,21 +1,25 @@
 def christmastree():
     q = (input("Please select a number between 5 and 20.   "))
-    y = int(q)
-    if 4<y<21:
-        n = y-1
-        z = n
-        for i in range(y):
-            i+=1
-            print(" "*n+"#"*i+"#"*i)
-            n-=1
-        for x in range(3):
-            if (z+1)>12:
-                print(" "*(z-1)+"####")
-            else:
-                print(" "*z+"##")
-    else:
-        print("Number out of range!")
+    try:
+        y = int(q)
+        if 4<y<21:
+            n = y-1
+            z = n
+            for i in range(y):
+                i+=1
+                print(" "*n+"#"*i+"#"*i)
+                n-=1
+            for x in range(3):
+                if (z+1)>12:
+                    print(" "*(z-1)+"####")
+                else:
+                    print(" "*z+"##")
+        else:
+            print("Number out of range!")
+            christmastree()
+    except ValueError:
+        print("This is not a number!")
         christmastree()
         
-            
+        
 christmastree()
